@@ -3,11 +3,11 @@ import math
 standar_Size = 80
 size = 0
 timeOrPeople = 0
-def estemated(type=1,size=1,timeOrPeople=0):
-    if type == 1 and timeOrPeople != 0:
+def estemated(type=1,size=None,timeOrPeople=None):
+    if type == 1 and timeOrPeople != None:
         return math.ceil(size*standar_Size/timeOrPeople)
 
-    if type == 2 and timeOrPeople != 0:
+    if type == 2 and timeOrPeople != None:
     	return size*standar_Size/timeOrPeople
 
 while True:
@@ -16,10 +16,10 @@ while True:
 		break
 	print("Only 1 or 2 available")
 if type == 1:
-	size = int(input("Input work size:"))
-	timeOrPeople=int(input("Input expected time:"))
+	size = float(input("Input work size:"))
+	timeOrPeople=float(input("Input expected time:"))
 else:
-	size = int(input("Input work size:"))
+	size = float(input("Input work size:"))
 	timeOrPeople=int(input("Input working People:"))
 
 print(estemated(type,size,timeOrPeople))
